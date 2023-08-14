@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+source .env
+
+if ! command -v mkcert &> /dev/null
+then
+    echo "======== ERROR ========"
+    echo "mkcert could not be found"
+    echo "You have to install it: https://github.com/FiloSottile/mkcert"
+    exit
+fi
+
+echo "======== GENEREATE SELF SIGNED CERTS ========";
+
+mkcert -install
+mkcert -key-file ./certs/key.pem -cert-file ./certs/cert.pem "$DOMAIN" "*.$DOMAIN"
+
+echo "======== END GENEREATE SELF SIGNED CERTS ========";

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+cd docker
+if [ "$1" = "--root" ]; then
+  docker compose exec --user root:root project "${@:2}"
+else
+  docker compose exec --user www-data:www-data project "${@:1}"
+fi

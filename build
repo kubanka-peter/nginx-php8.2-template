@@ -1,0 +1,5 @@
+#!/bin/bash
+
+IMAGE="project:latest"
+
+docker build -t $IMAGE --target "prod" .
