@@ -11,6 +11,7 @@ then
 fi
 
 echo "======== GENEREATE SELF SIGNED CERTS ========";
+echo "DOMAIN: $DOMAIN";
 
 mkcert -install
 mkcert -key-file ./certs/key.pem -cert-file ./certs/cert.pem "$DOMAIN" "*.$DOMAIN"

@@ -24,5 +24,6 @@ rm -rf project/.git
 ### Configuration
 
 - after you got the source files, copy `docker/.env.dist` to `docker/.env` and adjust the values to your needs.
-- execute `docker/create-self-signed-certs` to create a self-signed certificate for the domain you specified in `docker/.env`
-- execute `./run` to start the containers, now you can access your app at `https://project.docker.localhost` by default
+- execute `cd docker && docker/create-self-signed-certs` to create a self-signed certificate for the domain you specified in `docker/.env`
+- execute `./up` to start the containers, now you can access your app at `https://project.docker.localhost` by default
+- execute `./run composer dump-autoload` to generate the autoloader
